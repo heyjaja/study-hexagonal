@@ -1,5 +1,7 @@
 package com.architecture.hexagonal.ch2.domain.entity;
 
+import com.architecture.hexagonal.ch2.domain.vo.IP;
+import com.architecture.hexagonal.ch2.domain.vo.Network;
 import com.architecture.hexagonal.ch2.domain.vo.RouterId;
 import com.architecture.hexagonal.ch2.domain.vo.RouterType;
 
@@ -10,6 +12,7 @@ import java.util.stream.Collectors;
 public class Router {
     private final RouterType routerType; // 엔티티의 상태
     private final RouterId routerId; // 고유한 식별자
+    private Switch networkSwitch;
 
     public Router(RouterType routerType, RouterId routerId) {
         this.routerType = routerType;
@@ -34,6 +37,18 @@ public class Router {
 
     private static Predicate<Router> isCore() {
         return p -> p.getRouterType() == RouterType.CORE;
+    }
+
+    public void addNetworkToSwitch(Network network) {
+        this.networkSwitch = networkSwitch.addNetwork(network);
+    }
+
+    public Network createNetwork(IP address, String name, int cidr) {
+        return new Network(address, name, cidr);
+    }
+
+    public List<Network> retrieveNetworks() {
+        return networkSwitch.getNetworks();
     }
 
     private RouterType getRouterType() {

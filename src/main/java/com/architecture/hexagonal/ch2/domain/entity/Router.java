@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class Router {
     private final RouterType routerType; // 엔티티의 상태
     private final RouterId routerId; // 고유한 식별자
-    private Switch networkSwitch;
+    private Switch networkSwitch; // 라우터에 직접 연결된 스위치
 
     public Router(RouterType routerType, RouterId routerId) {
         this.routerType = routerType;
@@ -40,10 +40,12 @@ public class Router {
     }
 
     public void addNetworkToSwitch(Network network) {
+        // 스위치에 네트워크 연결
         this.networkSwitch = networkSwitch.addNetwork(network);
     }
 
     public Network createNetwork(IP address, String name, int cidr) {
+        // 새로운 네트워크를 생성
         return new Network(address, name, cidr);
     }
 
@@ -51,7 +53,7 @@ public class Router {
         return networkSwitch.getNetworks();
     }
 
-    private RouterType getRouterType() {
+    public RouterType getRouterType() {
         return routerType;
     }
 

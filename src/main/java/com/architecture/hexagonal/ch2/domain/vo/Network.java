@@ -14,4 +14,16 @@ public class Network {
         this.name = name;
         this.cidr = cidr;
     }
+
+    public IP getAddress() {
+        return address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCidr() {
+        return cidr;
+    }
 }

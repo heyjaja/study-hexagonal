@@ -1,5 +1,8 @@
 package com.architecture.hexagonal.ch2.domain.vo;
 
+import lombok.Getter;
+
+@Getter
 public class IP {
     private final String address;
     private final Protocol protocol;
@@ -15,5 +18,13 @@ public class IP {
             this.protocol = Protocol.IPV6;
         }
         this.address = address;
+    }
+
+    public static IP fromAddress(String address) {
+        return new IP(address);
+    }
+
+    public String getIPAddress() {
+        return address;
     }
 }

@@ -24,4 +24,8 @@ public class SwitchId {
                 "id='" + id + '\'' +
                 '}';
     }
+
+    public UUID getUUID() {
+        return id;
+    }
 }

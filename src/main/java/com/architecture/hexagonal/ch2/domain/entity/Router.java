@@ -10,8 +10,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Router {
-    private final RouterType routerType; // 엔티티의 상태
-    private final RouterId routerId; // 고유한 식별자
+    private RouterType routerType; // 엔티티의 상태
+    private RouterId routerId; // 고유한 식별자
     private Switch networkSwitch; // 라우터에 직접 연결된 스위치
 
     public Router(RouterType routerType, RouterId routerId) {

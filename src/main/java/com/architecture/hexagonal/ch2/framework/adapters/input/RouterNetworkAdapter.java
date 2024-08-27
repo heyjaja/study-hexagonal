@@ -25,5 +25,5 @@ public abstract class RouterNetworkAdapter {
         return routerNetworkUseCase.addNetworkToRouter(routerId, network);
     }
 
-    public abstract Router ProcessRequest(Object requestParams);
+    public abstract Router processRequest(Object requestParams);
 }

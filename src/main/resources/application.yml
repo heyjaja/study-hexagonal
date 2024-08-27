@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: study-hexagonal
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:inventory;MODE=MYSQL;
+    username: sa
+    password:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    hibernate:
+      ddl-auto: create
+    show_sql: true
+
+  logging.level:
+    org.hibernate.SQL: debug

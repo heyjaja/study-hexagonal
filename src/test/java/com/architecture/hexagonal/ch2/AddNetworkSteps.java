@@ -6,6 +6,7 @@ import com.architecture.hexagonal.ch2.domain.specification.NetworkAvailableSpeci
 import com.architecture.hexagonal.ch2.domain.vo.IP;
 import com.architecture.hexagonal.ch2.domain.vo.Network;
 import com.architecture.hexagonal.ch2.domain.vo.RouterId;
+import com.architecture.hexagonal.ch2.framework.adapters.output.file.RouterNetworkFileAdapter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

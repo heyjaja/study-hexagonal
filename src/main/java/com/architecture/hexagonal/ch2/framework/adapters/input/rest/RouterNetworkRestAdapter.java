@@ -25,7 +25,7 @@ public class RouterNetworkRestAdapter extends RouterNetworkAdapter {
     }
 
     @Override
-    public Router ProcessRequest(Object requestParams) {
+    public Router processRequest(Object requestParams) {
         Map<String, String> params = new HashMap<>();
         if(requestParams instanceof HttpServer) {
             var httpserver = (HttpServer) requestParams;

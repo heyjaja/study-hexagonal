@@ -25,6 +25,8 @@ public class Router {
         this.networkSwitch = networkSwitch;
     }
 
+    public Router() {}
+
     public static Predicate<Router> filterRouterByType(RouterType routerType) {
         return routerType.equals(RouterType.CORE)
                 ? isCore() :

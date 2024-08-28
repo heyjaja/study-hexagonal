@@ -26,7 +26,7 @@ public class NetworkOperation {
             throw new IllegalArgumentException("CIDR is below " + MINIMUM_ALLOWED_CIDR);
 
 
-        if(networkAvailableSpec.isSatisfiedBy(router))
+        if(!networkAvailableSpec.isSatisfiedBy(router))
             throw new IllegalArgumentException("address already exist");
 
         if(networkAmountSpec.and(routerTypeSpec).isSatisfiedBy(router)) {

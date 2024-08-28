@@ -1,8 +1,10 @@
 package com.architecture.hexagonal.ch2.domain.entity;
 
-import com.architecture.hexagonal.ch2.domain.vo.*;
+import com.architecture.hexagonal.ch2.domain.vo.IP;
+import com.architecture.hexagonal.ch2.domain.vo.Network;
+import com.architecture.hexagonal.ch2.domain.vo.SwitchId;
+import com.architecture.hexagonal.ch2.domain.vo.SwitchType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Switch {
@@ -28,7 +30,6 @@ public class Switch {
 
     public Switch addNetwork(Network network) {
         // 네트워크는 스위치에 직접 연결, 더 많은 네트워크를 추가하는 기능을 지원하는 메서드
-        var networks = new ArrayList<Network>();
         networks.add(network);
         return new Switch(this.switchType, this.switchId, networks, this.address);
     }
